@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-icon>local_fire_department</mat-icon>
+    <span>CareWare Lite Portal</span>
+    <span class="example-spacer"></span>
+    <button mat-button (click)="onLogout()"><mat-icon>exit_to_app</mat-icon>Logout</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened mode="side" [style.width]="'250px'">
+        <mat-nav-list class="mat-nav-list-style">
+            <!-- <a mat-list-item>Schedule</a>
+            <a mat-list-item>Request</a>
+            <a mat-list-item>Swap</a> -->
+            @for (item of menuItems; track $index) {
+            <a mat-list-item [routerLink]="item.route">
+                <mat-icon matListItemIcon [ngStyle]="{'color':'white'}">{{item.icon}}</mat-icon>
+                <span class="menu_item_text">{{item.label}}</span>
+            </a>
+            }
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet />
+    </mat-sidenav-content>
+</mat-sidenav-container>
