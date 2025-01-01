@@ -25,7 +25,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home-layout.component.css'
 })
 export class HomeLayoutComponent {
-  title = 'cwwlitemat';
+  title = 'cwwlitemat 1stJan';
   //Mat icon list
   //https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
   menuItems: any[] = [
